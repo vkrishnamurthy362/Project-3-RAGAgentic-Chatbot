@@ -1,0 +1,24 @@
+Build docker image:
+docker build -t astrarag-chatbot:latest .
+
+Start your docker container
+docker run -p 8000:8000 -p 8501:8501 -e GROQ_API_KEY=your_groq_api_key astrarag-chatbot:latest
+
+
+detached mode:
+docker run -d -p 8000:8000 -p 8501:8501 -e GROQ_API_KEY=your_groq_api_key astrarag-chatbot:latest
+
+
+
+stop continer:
+docker stop container_id
+
+strat a stopped container:
+docker start container_id
+
+
+strat a stopped container:
+docker rm container_id
+
+delete an image
+docker rmi image_id
