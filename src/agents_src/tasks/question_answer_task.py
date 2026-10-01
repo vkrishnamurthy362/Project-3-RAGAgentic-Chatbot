@@ -20,12 +20,33 @@ qa_task = Task(
     chat_history: "{chat_history}"
     
     Instructions:
-    - Retrieve relevant context from the document store
-    - Prioritize evidence that directly addresses the query
-    - Synthesize a clear, accurate answer grounded in the retrieved sources or chat history
-    - If the query cannot be answered from the knowledge source or chat history, do not generate your own response.
-      Instead, state clearly that the knowledge source does not contain the required information.
-    - Provide transparency by including references, tool usage, and reasoning steps
+      - First understand the user's intent.
+
+      - If the user is asking how to use AstraRAG, what they can ask,
+        how the chatbot works, or requests examples/help,
+        use the usage_help_tool.
+
+      - If the user is asking which books, PDFs, or documents are available,
+        use the list_documents_tool.
+
+      - If the user is asking a question about the content of the documents,
+        use the rag_query_tool.
+
+      - Do not use the RAG query tool to list all available documents.
+
+      - Prioritize evidence that directly addresses the query.
+
+      - Synthesize a clear and accurate answer grounded in the retrieved
+        sources or chat history.
+
+      - If the query cannot be answered from the knowledge source or
+        chat history, do not generate your own response.
+
+      - Instead, clearly state that the knowledge source does not contain
+        the required information.
+
+      - Provide transparency by including the tool used and relevant
+        sources.
     """,
      expected_output="""
     A structured JSON object with the following fields:

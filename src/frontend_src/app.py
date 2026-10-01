@@ -16,6 +16,28 @@ st.set_page_config(
 )
 st.title("💬 AstraRAG - Agentic RAG Chatbot")
 
+st.info(
+    """
+    ### 📚 How to use AstraRAG
+
+    AstraRAG lets you ask questions about the documents available
+    in its knowledge base.
+
+    **Start with:**
+    - `What books are available?`
+    - `How do I use AstraRAG?`
+    - `What can I ask about these documents?`
+
+    **Then ask questions such as:**
+    - `Explain biodiversity in simple terms.`
+    - `Summarize the important points.`
+    - `Compare the concepts discussed in the documents.`
+    - `Explain this topic in detail.`
+
+    💡 Tip: You can also ask follow-up questions.
+    """
+)
+
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
