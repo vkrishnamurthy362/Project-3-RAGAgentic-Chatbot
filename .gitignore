@@ -219,3 +219,18 @@ __marimo__/
 
 # Vector db dir
 doc_vector_store/
+
+# Local ingestion logs and generated reports
+logs/
+
+# Local vector-store backups
+doc_vector_store_backup_*/
+
+# Temporary Chroma API test data
+chroma_api_test/
+
+# Incremental ingestion state
+ingestion_manifest.json
+
+# Local source-code backups
+*.backup_*
